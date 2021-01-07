@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-class image_dither(object):
+class ditherModule(object):
     def dither(self, img, method='floyd-steinberg', resize = False):
         if(resize):
             img = cv2.resize(img, (np.int(0.5*(np.shape(img)[1])), np.int(0.5*(np.shape(img)[0]))))
@@ -80,3 +80,9 @@ class image_dither(object):
 
         else:
             raise TypeError('specified method does not exist. available methods = "simple2D", "floyd-steinberg(default)", "jarvis-judice-ninke"')
+
+
+def dither(img, method='floyd-steinberg', resize = False):
+    dither_object = ditherModule()
+    out = dither_object.dither(img, method, resize)
+    return(out)

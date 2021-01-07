@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
-from openDither import image_dither
-if __name__ == '__main__':
-    img = cv2.imread('images/img1.jpg', 0)
-    dither_object = image_dither()
-    out = dither_object.dither(img, 'jarvis-judice-ninke', resize=True)
+import Dither
 
-    cv2.imshow('a', out)
-    cv2.waitKey(0)
+
+if __name__ == '__main__':
+    img = cv2.imread('images/img1.jpg', 0)  # read image
+
+    out = Dither.dither(img, 'simple2D', resize=True)  # perform image dithering
+    cv2.imshow('dithered image', out)
+    cv2.waitKey(0);
