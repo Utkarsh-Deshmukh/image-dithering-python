@@ -8,4 +8,4 @@ if __name__ == '__main__':
 
     out = Dither.dither(img, 'simple2D', resize=True)  # perform image dithering
     cv2.imshow('dithered image', out)
-    cv2.waitKey(0);
+    cv2.waitKey(0)

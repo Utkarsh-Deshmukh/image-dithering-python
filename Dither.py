@@ -3,7 +3,7 @@ import numpy as np
 class ditherModule(object):
     def dither(self, img, method='floyd-steinberg', resize = False):
         if(resize):
-            img = cv2.resize(img, (np.int(0.5*(np.shape(img)[1])), np.int(0.5*(np.shape(img)[0]))))
+            img = cv2.resize(img, (int(0.5*(np.shape(img)[1])), int(0.5*(np.shape(img)[0]))))
         if(method == 'simple2D'):
             img = cv2.copyMakeBorder(img, 1, 1, 1, 1, cv2.BORDER_REPLICATE)
             rows, cols = np.shape(img)
